@@ -1,0 +1,65 @@
+{
+  "name": "nodejs-boilerplate",
+  "version": "0.0.1",
+  "main": "src/index.js",
+  "author": "ITM",
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "babel-node": "babel-node",
+    "dev": "nodemon --exec npm run babel-node -- ./src/index.js",
+    "test": "mocha --require @babel/register src/**/*.test.js",
+    "lint": "eslint ./src/ --ignore-path .eslintignore",
+    "lint:fix": "npm run lint -- --fix",
+    "db:reset": "sequelize db:drop && sequelize db:create && sequelize db:migrate && sequelize db:seed:all"
+  },
+  "dependencies": {
+    "@hapi/joi": "^17.1.1",
+    "bcrypt": "^5.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-joi-validation": "^5.0.0",
+    "express-useragent": "^1.0.13",
+    "http-status": "^1.5.0",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.20",
+    "method-override": "^3.0.0",
+    "passport": "^0.4.1",
+    "passport-jwt": "^4.0.0",
+    "pg": "^8.5.1",
+    "pg-hstore": "^2.3.3",
+    "sequelize": "^5.18.4",
+    "uuid": "^3.4.0",
+    "winston": "^3.2.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.12.10",
+    "@babel/core": "^7.12.10",
+    "@babel/node": "^7.12.10",
+    "@babel/plugin-proposal-optional-chaining": "^7.12.7",
+    "@babel/polyfill": "^7.12.1",
+    "@babel/preset-env": "^7.12.10",
+    "@babel/register": "^7.12.10",
+    "babel-eslint": "^10.0.3",
+    "chai": "^4.2.0",
+    "eslint": "^5.8.0",
+    "eslint-config-airbnb-base": "^13.2.0",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-plugin-babel": "^5.3.1",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-mocha": "^5.3.0",
+    "eslint-plugin-prettier": "^3.2.0",
+    "import-sort-style-module": "^6.0.0",
+    "mocha": "^6.2.3",
+    "nodemon": "^2.0.6",
+    "prettier": "^2.2.1",
+    "prettier-plugin-import-sort": "0.0.4",
+    "sequelize-mock": "^0.10.2"
+  },
+  "importSort": {
+    ".js, .jsx, .ts, .tsx": {
+      "style": "module"
+    }
+  }
+}
